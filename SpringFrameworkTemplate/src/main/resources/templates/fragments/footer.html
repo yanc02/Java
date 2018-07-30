@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:jsp="http://java.sun.com/JSP/Page">
+<head>
+</head>
+<body>
+<div th:fragment="footer">
+
+        <hr />
+
+        <footer>
+
+
+            <div class="container">
+                <p>
+                    <!-- this is footer -->
+                    <!--© 2017 mkyong.com-->
+                    <!--<span sec:authorize="isAuthenticated()">| Logged user: <span sec:authentication="name"></span> | Roles: <span sec:authentication="principal.authorities"></span> |-->
+                <!--<a th:href="@{/logout}">Sign Out</a>-->
+            <!--</span>-->
+                <!--<p th:text="${#dates.format(standardDate, 'dd-MM-yyyy HH:mm')}"></p>-->
+                    ©<span th:text="${#dates.year(#dates.createNow())}"></span> - My Spring Application
+
+
+                </p>
+            </div>
+
+
+            <script type="text/javascript"
+                    src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        </footer>
+
+</div>
+</body>
+</html>

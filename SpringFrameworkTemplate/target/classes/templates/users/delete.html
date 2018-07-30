@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Spring Boot Thymeleaf + Spring Security</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+    <h2>Edit</h2>
+
+    <div class="form-horizontal">
+        <h4>Person</h4>
+        <hr/>
+        <form method="post" th:action="@{/Users/delete}" th:object="${user}">
+            <input type="hidden" id="name" th:field="*{id}"/>
+            <div class="form-group">
+                <label class="control-label col-md-2" path="nombre">Name</label>
+                <div class="col-md-3">
+                    <th:block th:text="*{name}" th:field="*{name}"></th:block>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2" path="lastName">Last Name</label>
+                <div class="col-md-3">
+                    <th:block th:text="*{lastName}" th:field="*{lastName}"></th:block>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2" path="email">Email</label>
+                <div class="col-md-3">
+                    <th:block th:text="*{email}" th:field="*{email}"></th:block>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-default"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>

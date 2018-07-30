@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf + Spring Security</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+
+
+<div class="container">
+
+    <h2 th:text="${messages[0]}"></h2>
+    <h3 th:text="${messages[1]}"></h3>
+
+    <p>Use this area to provide additional information.</p>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
